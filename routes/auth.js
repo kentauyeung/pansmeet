@@ -1,10 +1,7 @@
-const { config } = require('dotenv/types')
 const express = require('express')
-const { MongoTimeoutError } = require('mongodb')
 const passport = require('passport')
 // const config = require('../config/config') // Uncomment after  creating a config dir
 const router = express.Router()
-
 
 router.get('/',
     function(req, res, next) {

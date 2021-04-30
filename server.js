@@ -8,9 +8,9 @@ const mongoose = require('mongoose');
 const connectDB = require('./config/database')
 
 const homeRoute = require('./routes/main')
-//const authRoute = require('./routes/auth')
+// const authRoute = require('./routes/auth')
 //const profileRoute = require('./routes/profile')
-//const feedRoute = require('./routes/feed')
+const feedRoute = require('./routes/feed')
 
 require('dotenv').config({ path: "./config/.env" });
 
@@ -30,8 +30,8 @@ app.use('/', homeRoute)
 // // User profile
 // app.use('/profile', profileRoute)
 
-// // User feed
-// app.use('/feed', feedRoute)
+// User feed
+app.use('/feed', feedRoute)
 
 // app.use('/createPost', (req, res) => {
 //     Db.collection('userPost').insertOne( { title: req.body.title })
