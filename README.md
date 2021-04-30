@@ -25,9 +25,28 @@ User account landing page (what use sees when they login)
 
 ## rotate gitduck "channeling" each session
 
+*insert Patrick Swayze ghost gif* 
 
+Luke
+Kent 
+
+## Page flow
+
+login page
+
+feed page
+
+profile page
 
 ## Goals for 4/27/2021
-  get the server running 
+    get the server running 
+## Goals for 4/29/2021
+    get a post on the dom working
+        Schema is working but there is no route yet 
+            feed controller has been created 
+            
+             
+## Next meeting Friday April 30th April  3:30 PST 6:30 EST
 
+    
     
