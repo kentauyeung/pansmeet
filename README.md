@@ -48,5 +48,7 @@ profile page
              
 ## Next meeting Friday April 30th April  3:30 PST 6:30 EST
 
+Irena - will work on controllers/feed and routes/feed
+
     
     
