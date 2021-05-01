@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose')
 
-const postSchema = new mongoose.Schema({
+const PostSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -28,6 +28,6 @@ const postSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Post', PostSchema);
 //MongoDB collections would look like this:
 //{title: "I am posting something", content: "Content, Content, baby. Blah, blah!!", microsoftID: "123abD4321", createdAt}

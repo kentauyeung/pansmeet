@@ -1,7 +1,15 @@
-const Post = require('../models/Post')
+const feed = require('../models/Post')
 
 module.exports = {
-    getFeeds: (req, res) =>{
-        res.render('feed')
+    getFeeds: async (req,res)=>{
+        console.log(req.user)
+        try{
+            // {user: req.user}
+            res.render('header.ejs',{user: req.user})
+        }catch(err){
+            console.log(err)
+        }
     }
-}
+ 
+}    
+
