@@ -30,7 +30,7 @@ router.get('/openid/return',
     )(req, res, next);
   },
   function(req, res) {
-    console.log('We received a return from AzureAD.');
+    console.log('[Get] We received a return from AzureAD.');
     res.redirect('/feed');
   });
 
@@ -44,7 +44,7 @@ router.post('/openid/return',
     )(req, res, next);
   },
   function(req, res) {
-    console.log('We received a return from AzureAD.');
+    console.log('[Post] We received a return from AzureAD.');
     res.redirect('/feed');
   });
 

@@ -1,3 +1,5 @@
-h1{
-    color: red;
+.hide{
+    max-height: 0;
+    opacity: 0;
+    transition:all 1s ease-out;;
 }
