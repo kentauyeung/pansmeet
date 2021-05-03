@@ -5,6 +5,6 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/',ensureAuth, feedController.getFeeds)
 
-//router.post('/createPost', feedController.createPost)
+router.post('/createPost', ensureAuth, feedController.createPost)
 
 module.exports = router
