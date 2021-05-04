@@ -11,20 +11,18 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      displayName: {
+    displayName: {
         type: String,
         required: true,
     }, 
-        bio: {
-            type: String,
-            required: true
-        },
-        profilePicUrl: {
-            type: String,
-            required: true
-        },
-      
-
+    bio: {
+        type: String,
+        required: true
+    },
+    profilePicUrl: {
+        type: String,
+        required: true
+    },
 });
 
 module.exports = mongoose.model('User', UserSchema);
