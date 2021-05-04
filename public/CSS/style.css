@@ -6,5 +6,16 @@
 
 .segmentOverflow{
     overflow:hidden;
-    height:400px;
+}
+
+.greeting{
+    font-size: 20px;
+    text-align: center;
+    transition: font-size .6s ease-out;
+}
+
+.greeting:hover{
+    font-size: 28px;
+    color: brown;
+    
 }

@@ -15,15 +15,16 @@
             <div class="ten wide column">
                 <h1>Welcome, <%= user.displayName %>!</h1>
                 <div id="share-post" class="ui top attached button">Share something with your pans</div>
-                <form class="ui form share-form hide" method="POST" action="/feed/createPost">
+                <form class="ui form share-form hide" enctype="multipart/form-data" method="POST" action="/feed/createPost">
                     <textarea name="content" id="post-body" cols="30" rows="10"></textarea>
+                    <input type="file" name="image" />
                     <button class="ui blue bottom attached fluid button" type="submit">Submit</button>
                 </form>
 
                 <% for (let i = 0; i < posts.length; i++) { %>
                     <div class="ui orange padded segment segmentOverflow">
                         <h5 class="ui header">
-                            <img src="/images/avatar2/medium/patrick.png" class="ui circular image">
+                            <img src="https://res.cloudinary.com/pansmeet/image/upload/v1620107720/dummyProfile_olgpyn.png" class="ui circular image">
                             <%= posts[i].user.displayName %>
                         </h5>
                         <div class="ui grid">
@@ -32,11 +33,18 @@
                                     <a class="ui right corner large label">
                                       <i class="heart icon"></i>
                                     </a>
-                                    <img src="/images/wireframe/image.png">
+                                    <img src="<%= (posts[i].postPicUrl) ? posts[i].postPicUrl : 'https://res.cloudinary.com/pansmeet/image/upload/v1620108017/squint_cf0moy.png' %>">
                                 </div>
                             </div>
                             <div class=" eight wide column">
                                 <p><%= posts[i].content %></p>
+                            </div>
+                        </div>
+                        <div class="ui grid">
+                            <div class="ten wide column"></div>
+                            <div class="six wide column <%= posts[i]._id %> <%= posts[i].cloudinary_id %>">
+                                <a class="ui right floated label editPost"><i class="edit icon"></i>EDIT BLURB</a>
+                                <a class="ui label deletePost"><i class="delete icon"></i>  DELETE</a>
                             </div>
                         </div>
                     </div>
@@ -44,7 +52,8 @@
                 
             </div>
             <div class="six wide column">
-                <img class="ui medium circular image" src="/images/wireframe/square-image.png">
+                <img class="ui medium circular centered column image" src="https://res.cloudinary.com/pansmeet/image/upload/v1620102125/baby_gzvluj.jpg">
+                <h3 class="greeting">Hey there, nice to see you!</h3>
             </div>
             
             

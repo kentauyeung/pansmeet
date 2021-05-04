@@ -29,6 +29,14 @@ const PostSchema = new mongoose.Schema({
         //[{userName: "petty_parker", comment: "blah blah blah", createdAt: 12/31/2021},
         //  {userName: "90_Day_Beyonce", comment: "that's dope", createdAt: 1/1/2021}
         //]
+    },
+    postPicUrl: {
+        type: String,
+        required: true
+    },
+    cloudinary_id: {
+        type: String,
+        required: true
     }
 });
 

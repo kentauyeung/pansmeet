@@ -3,28 +3,26 @@ const mongoose = require('mongoose');
 //this is the schema pattern you should used when developing collections in the
 //mongoDB database
 const UserSchema = new mongoose.Schema({
-    // userName: {
-    //     type: String,
-    //     required: true
-    // },
+    userName: {
+        type: String,
+        required: true
+    },
     microsoftId: {
         type: String,
         required: true,
       },
-      displayName: {
+    displayName: {
         type: String,
         required: true,
     }, 
-        // bio: {
-        //     type: String,
-        //     required: true
-        // },
-        // profilePicUrl: {
-        //     type: String,
-        //     required: true
-        // },
-      
-
+    bio: {
+        type: String,
+        required: true
+    },
+    profilePicUrl: {
+        type: String,
+        required: true
+    },
 });
 
 module.exports = mongoose.model('User', UserSchema);
