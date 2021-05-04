@@ -17,7 +17,7 @@
                 <div id="share-post" class="ui top attached button">Share something with your pans</div>
                 <form class="ui form share-form hide" enctype="multipart/form-data" method="POST" action="/feed/createPost">
                     <textarea name="content" id="post-body" cols="30" rows="10"></textarea>
-                    <input type="file" name="image" />
+                    <input type="file" name="image" required/>
                     <button class="ui blue bottom attached fluid button" type="submit">Submit</button>
                 </form>
 
