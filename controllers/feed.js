@@ -17,14 +17,14 @@ module.exports = {
         }
     },
     createPost:async (req, res) => {
-        console.log("file", req.file)
-        console.log('body',req.body)
+        //console.log("file", req.file)
+        //console.log('body',req.body)
         try {
             const imageResult = await cloudinary.uploader.upload(req.file.path)
             req.body.user = req.user.id
             req.body.microsoftId = req.user.microsoftId
             req.body.comment = []
-            console.log(imageResult)
+            //console.log(imageResult)
             req.body.postPicUrl = imageResult.secure_url
             req.body.cloudinary_id = imageResult.public_id
             await Post.create(req.body)    
@@ -38,12 +38,12 @@ module.exports = {
         try {
             const storyId = req.params.storyId
             const cloudinaryId = req.body.cloudinaryId
-            console.log(storyId)
-            console.log(cloudinaryId)
+            //console.log(storyId)
+            //console.log(cloudinaryId)
             let post = await Post.findByIdAndDelete(storyId)
             if(cloudinaryId){
                 await cloudinary.uploader.destroy(cloudinaryId)}
-                
+
             res.json(post)
         } catch (err) {
             console.log(err)
