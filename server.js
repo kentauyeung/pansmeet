@@ -10,9 +10,8 @@ const connectDB = require('./config/database')
 const authRoutes = require('./routes/auth')
 const homeRoute = require('./routes/main')
 const feedRoutes = require('./routes/feed')
-//const authRoute = require('./routes/auth')
 //const profileRoute = require('./routes/profile')
-//const feedRoute = require('./routes/feed')
+
 
 require('dotenv').config({ path: "./config/.env" });
 
