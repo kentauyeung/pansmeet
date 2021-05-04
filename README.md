@@ -1,52 +1,30 @@
+# Pansmeet
+A social media platform fully equipped with authentication from Microsoft AzureAD. This app is designed for coppersmiths from all around to share their love for pots and pans.
 
-# pansmeet
-100Devs social media platform
+**Link to project:** TBD HEROKU LINK
 
-Local Login (landing page to site): Nicole
-User account landing page (what use sees when they login)
-    - Name
-    - Email
-    - Logout button
-    - Add post
-        - Title
-        - Caption
-        - Image
-        - Confirm button
-    - User’s images
-    - Grid 2xX
-    - Image (on click)
-        - Goes to another page
-            - Title
-            - Caption
-            - Like button
-            - Delete button
-            - Profile button
+![alt tag](https://youtu.be/47k_MxpCFJs)
 
+## How It's Made:
 
-## rotate gitduck "channeling" each session
+**Technologies used:** MongoDB, Mongoose, Express, Passport Azure AD, Multer, EJS, Cloudinary, JavaScript
 
-*insert Patrick Swayze ghost gif* 
+We used MongoDB to store our user data (names, emails, sessions) and connected our database using passport and Microsoft Azure AD to allow our app to authenticate users easily. We then created routes for users to update their profile using the CRUD method. In addition, we utilized the Multer’s API so users could upload images and Cloudinary to update them. Using EJS, we were able to get our user’s images back from the database to showcase.
 
-Luke
-Kent 
+## Lessons Learned:
 
-## Page flow
+Before writing any code, we all decided it was best to write out a list of things we felt that we needed for an MVP - user login and the ability for the user to post an image to their profile. At first, we discussed the possibility of working on separate parts of the project as that would get us to our goal the fastest. At the end of our first meeting, we ultimately decided that it was best to work on each part together. In doing so, we delegated ourselves to research and debug whenever we ran into problems. We got to know each other along the way and made creating this app a lot of fun. This was the first time any of us have used half of the names in our stack so you can believe me when I say a lot of googling was involved.
 
-login page
+## Creators:
 
-feed page
+**Irena Chen:** https://github.com/mengirena
 
-profile page
+**Luke Fountain:** https://github.com/LukeFountain
 
-## Goals for 4/27/2021
-    get the server running 
-## Goals for 4/29/2021
-    get a post on the dom working
-        Schema is working but there is no route yet 
-            feed controller has been created 
-            
-             
-## Next meeting Friday April 30th April  3:30 PST 6:30 EST
+**David Ney:** https://github.com/NDNey
 
-    
-    
+**Anthony Gonzalez:** https://github.com/anthonywgonzalez
+
+**Nicole Gathany:** https://github.com/nicole-gathany
+
+**Kent Auyeung:** https://github.com/kentauyeung
