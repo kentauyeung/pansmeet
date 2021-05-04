@@ -3,7 +3,8 @@ A social media platform fully equipped with authentication from Microsoft AzureA
 
 **Link to project:** TBD HEROKU LINK
 
-![alt tag](https://youtu.be/47k_MxpCFJs)
+![Landing Page Screenshot](https://github.com/kentauyeung/pansmeet/blob/main/public/image/landing-page-ss.JPG)
+**Video DEMO:** (https://www.youtube.com/watch?v=47k_MxpCFJs)
 
 ## How It's Made:
 
