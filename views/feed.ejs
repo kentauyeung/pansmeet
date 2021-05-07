@@ -38,8 +38,8 @@
                             </div>
                             <div class=" eight wide column">
                                 <% if (editPost && editPost._id.toString() == posts[i]._id.toString()) { %>
-                                    <form action="/feed/edit/<%=posts[i]._id%>?_method=PUT">
-                                        <textarea name="" id="" style="width:100%;height:150px;max-height:200px;"><%= editPost.content %></textarea>
+                                    <form action="/feed/edit/<%=posts[i]._id%>?_method=PUT" method = "post">
+                                        <textarea name="content" id="" style="width:100%;height:150px;max-height:200px;"><%= editPost.content %></textarea>
                                         <button class="ui blue bottom attached fluid button" type="submit">Submit</button>
                                     </form>
                                 <%} else{ %>

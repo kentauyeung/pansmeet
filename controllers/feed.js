@@ -53,16 +53,24 @@ module.exports = {
     },
     showEdit: async (req, res) => {
         try {
-            console.log('run 1 time')
             const storyId = req.params.postID
-            console.log(req.params)
             const editPost = await Post.findByIdAndUpdate(storyId, {createdAt: new Date()})
-            console.log(editPost)
             const posts = await Post.find({}).populate('user').sort({createdAt: 'desc'})
             res.render('feed',{posts:posts, user:req.user, editPost: editPost})
 
         } catch (err) {
             console.log(err)
         }
-    }
+    },
+    revisePost: async (req, res) => {
+        try {
+            const storyId = req.params.postID
+            const contentRevised = req.body.content
+            await Post.updateOne({_id: storyId},{content: contentRevised})
+            res.redirect('/feed')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+
 }
