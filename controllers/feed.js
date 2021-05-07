@@ -37,14 +37,15 @@ module.exports = {
     deletePost: async (req, res) =>{
         try {
             const storyId = req.params.storyId
-            const cloudinaryId = req.body.cloudinaryId
-            //console.log(storyId)
-            //console.log(cloudinaryId)
+            const cloudinaryId = req.params.cloudinaryId
+            console.log(storyId)
+            console.log(cloudinaryId)
             let post = await Post.findByIdAndDelete(storyId)
-            if(cloudinaryId){
+            if(cloudinaryId !== "NA"){
                 await cloudinary.uploader.destroy(cloudinaryId)}
-
-            res.json(post)
+                
+            console.log("Post deleted")
+            res.redirect('/feed')
         } catch (err) {
             console.log(err)
         }

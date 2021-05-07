@@ -41,11 +41,17 @@
                             </div>
                         </div>
                         <div class="ui grid">
-                            <div class="ten wide column"></div>
-                            <div class="six wide column <%= posts[i]._id %> <%= posts[i].cloudinary_id %>">
-                                <a class="ui right floated label editPost"><i class="edit icon"></i>EDIT BLURB</a>
-                                <a class="ui label deletePost"><i class="delete icon"></i>  DELETE</a>
+                            <div class="eight wide column"></div>
+                            <% if (posts[i].user.id == user.id) {%>
+                            <div class="eight wide column  <%= posts[i]._id %>">
+                                <form action="/feed/<%=posts[i]._id%>/<%= (posts[i].cloudinary_id) ? posts[i].cloudinary_id : 'NA'%>?_method=DELETE" method="post">
+                                    <button type="submit" class="ui tiny right floated button"><i class="delete icon"></i> DELETE</button>
+                                </form>
+                                <form action="/feed/<%=posts[i]._id%>?_method=PUT" method="post">
+                                    <button type="submit" class="ui tiny right floated button"><i class="edit icon"></i>EDIT BLURB</button>
+                                </form>
                             </div>
+                            <% } %>
                         </div>
                     </div>
                 <% } %>

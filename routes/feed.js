@@ -8,6 +8,6 @@ router.get('/', ensureAuth, feedController.getFeeds)
 
 router.post('/createPost', ensureAuth, upload.single("image"), feedController.createPost)
 
-router.delete('/:storyId', ensureAuth, feedController.deletePost)
+router.delete('/:storyId/:cloudinaryId', ensureAuth, feedController.deletePost)
 
 module.exports = router
