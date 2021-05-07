@@ -8,7 +8,7 @@ module.exports = {
         try {
             const posts = await Post.find({}).populate('user').sort({createdAt: 'desc'})
             //console.log("req.user",req.user)
-            res.render('feed', {posts:posts, user:req.user})
+            res.render('feed', {posts:posts, user:req.user, editPost:false})
             // res.render('feed',{posts})
             
         } catch (err) {
@@ -37,6 +37,7 @@ module.exports = {
     deletePost: async (req, res) =>{
         try {
             const storyId = req.params.storyId
+            console.log(req)
             const cloudinaryId = req.params.cloudinaryId
             console.log(storyId)
             console.log(cloudinaryId)
@@ -46,6 +47,20 @@ module.exports = {
                 
             console.log("Post deleted")
             res.redirect('/feed')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+    showEdit: async (req, res) => {
+        try {
+            console.log('run 1 time')
+            const storyId = req.params.postID
+            console.log(req.params)
+            const editPost = await Post.findByIdAndUpdate(storyId, {createdAt: new Date()})
+            console.log(editPost)
+            const posts = await Post.find({}).populate('user').sort({createdAt: 'desc'})
+            res.render('feed',{posts:posts, user:req.user, editPost: editPost})
+
         } catch (err) {
             console.log(err)
         }
