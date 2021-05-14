@@ -1,6 +1,5 @@
 const express = require('express');
-const { Db } = require('mongodb'); 
-// const MongoClient = require('mongodb').MongoClient
+const methodOverride = require("method-override")
 const app = express();
 const mongoose = require('mongoose');
 const passport = require('passport');
@@ -21,6 +20,7 @@ require('./config/passport')(passport)
 connectDB()
 
 app.set('view engine', 'ejs');
+app.use(methodOverride('_method'))
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
